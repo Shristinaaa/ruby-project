@@ -1,0 +1,39 @@
+.container 
+  .row  
+    .col-sm-8.offset-sm-2
+      = form_for @user do |f|
+        .form-group
+          = f.label :name 
+        
+          = f.text_field :name, class: "form-control"
+        .form-group
+          = f.label :email
+          = f.email_field :email, placeholder: "your placeholder", class: "form-control"
+        .form-group
+          = f.label :age
+          = f.select :age, 1..100,{}, {class: "form-control"}
+        .form-group
+          = f.label :phone
+          = f.telephone_field :phone, placeholder: "your placeholder", class: "form-control"
+        .form-group
+          = f.label :password
+          = f.password_field :password, placeholder: "your placeholder", class: "form-control"
+        .form-group
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, placeholder: "your placeholder", class: "form-control"
+        .form-group
+          = f.label :image
+          = f.file_field :image, placeholder: "your placeholder", class: "form-control"
+        .form-group
+          = f.label :address
+          = f.text_area :address, placeholder: "your placeholder", class: "form-control"
+        .form-group
+          = f.label :gender
+          br/
+          = f.radio_button :gender, "male"
+          = f.label :gender_male, "Male" 
+          | &nbsp;
+          = f.radio_button :gender, "female"
+          = f.label :gender_female, "Female"
+        .form-group
+          = f.submit 'Create User', class: "btn btn-primary"
